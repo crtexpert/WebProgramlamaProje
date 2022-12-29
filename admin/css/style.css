@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:gainsboro;
+    min-height: 100vh;
+}
+
+.container{
+    height: 580px;
+    width: 400px;
+    padding: 80px 40px;
+    position: absolute ;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+.icon{
+    height: 300px;
+    width: 300px;
+}
+
+.txtb{
+    border-bottom: 2px solid #adadad;
+    color:#333;
+    border:none;
+    width: 100%;
+}
