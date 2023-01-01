@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, inital-scale=1.0">
+    <title>Admin Paneli</title>
+    <link rel="stylesheet" href="~/web-admin/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img class="icon" src="~/web-admin/img/admin.png">
+        <h2>Admin Giriş</h2>
+        @using (Html.BeginForm("Index", "AdminLogin", FormMethod.Post))
+        {
+            <div class="txtb">
+                <input type="text" name="kullaniciAdi" placeholder="Kullanıcı Adı">
+            </div>
+            <div class="txtb">
+                <input type="password" name="sifre" placeholder="Şifre">
+            </div>
+            <input type="submit" class="logbtn" value="Giriş">
+        }
+
+    </div>
+</body>
+</html>

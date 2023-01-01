@@ -1,0 +1,29 @@
+﻿@model WebProgramlamaProje.Models.Classes.Anasayfa
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Post Guncelle</h2>
+<hr />
+@using (Html.BeginForm("PostGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.id)
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.postBaslik)
+    @Html.TextBoxFor(x => x.postBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.postIcerik)
+    @Html.TextBoxFor(x => x.postIcerik, new { @class = "form-control"})
+    <br />
+    @Html.LabelFor(x => x.postResim)
+    @Html.TextBoxFor(x => x.postResim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.postTarih)
+    @Html.TextBoxFor(x => x.postTarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Guncelle</button>
+
+}
+

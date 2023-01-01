@@ -1,0 +1,25 @@
+﻿@model WebProgramlamaProje.Models.Classes.Anasayfa
+@{
+    ViewBag.Title = "YeniPost";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Post Paylaş</h2>
+<br/>
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.postBaslik)
+    @Html.TextBoxFor(x => x.postBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.postIcerik)
+    @Html.TextBoxFor(x => x.postIcerik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.postResim)
+    @Html.TextBoxFor(x => x.postResim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.postTarih)
+    @Html.TextBoxFor(x => x.postTarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Paylaş</button>
+</form>
+

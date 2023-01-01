@@ -1,0 +1,31 @@
+﻿@using WebProgramlamaProje.Models.Classes
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>İçerik</th>
+        <th>Resim</th>
+        <th>Tarih</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.id</th>
+            <th style="word-break:break-word;">@item.postBaslik</th>
+            <th style="word-break:break-word;">@item.postIcerik</th>
+            <th style="word-break:break-word;">@item.postResim</th>
+            <th style="word-break:break-word;">@item.postTarih</th>
+            <th><a href="/Admin/Guncelle/@item.id" class="btn btn-primary">Güncelle</a></th>
+            <th><a href="/Admin/PostSil/@item.id" class="btn btn-danger">Sil</a></th>
+        </tr>
+    }
+</table>
+<a href="~/Admin/YeniPost/" class="btn btn-primary">Post Paylaş</a>

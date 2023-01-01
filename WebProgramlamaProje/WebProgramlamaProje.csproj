@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,6 +62,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -120,13 +128,23 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AnasayfaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Classes\Admin.cs" />
+    <Compile Include="Models\Classes\Anasayfa.cs" />
+    <Compile Include="Models\Classes\Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="web-admin\css\style.css" />
+    <Content Include="web-admin\img\admin.png" />
+    <Content Include="web-admin\index.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -137,6 +155,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="web-anasayfa\.gitattributes" />
+    <Content Include="web-anasayfa\images\mainBackground.jpg" />
+    <Content Include="web-anasayfa\images\bg.jpg" />
+    <Content Include="web-anasayfa\images\user.png" />
+    <Content Include="web-anasayfa\index.html" />
+    <Content Include="web-anasayfa\style.css" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -162,10 +186,77 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="web-anasayfa\.git\COMMIT_EDITMSG" />
+    <Content Include="web-anasayfa\.git\config" />
+    <Content Include="web-anasayfa\.git\description" />
+    <Content Include="web-anasayfa\.git\FETCH_HEAD" />
+    <Content Include="web-anasayfa\.git\HEAD" />
+    <Content Include="web-anasayfa\.git\hooks\applypatch-msg.sample" />
+    <Content Include="web-anasayfa\.git\hooks\commit-msg.sample" />
+    <Content Include="web-anasayfa\.git\hooks\fsmonitor-watchman.sample" />
+    <Content Include="web-anasayfa\.git\hooks\post-update.sample" />
+    <Content Include="web-anasayfa\.git\hooks\pre-applypatch.sample" />
+    <Content Include="web-anasayfa\.git\hooks\pre-commit.sample" />
+    <Content Include="web-anasayfa\.git\hooks\pre-merge-commit.sample" />
+    <Content Include="web-anasayfa\.git\hooks\pre-push.sample" />
+    <Content Include="web-anasayfa\.git\hooks\pre-rebase.sample" />
+    <Content Include="web-anasayfa\.git\hooks\pre-receive.sample" />
+    <Content Include="web-anasayfa\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="web-anasayfa\.git\hooks\push-to-checkout.sample" />
+    <Content Include="web-anasayfa\.git\hooks\update.sample" />
+    <Content Include="web-anasayfa\.git\index" />
+    <Content Include="web-anasayfa\.git\info\exclude" />
+    <Content Include="web-anasayfa\.git\logs\HEAD" />
+    <Content Include="web-anasayfa\.git\logs\refs\heads\main" />
+    <Content Include="web-anasayfa\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="web-anasayfa\.git\logs\refs\remotes\origin\main" />
+    <Content Include="web-anasayfa\.git\objects\0c\4b20b5252f4baa435277176a0a12854e225847" />
+    <Content Include="web-anasayfa\.git\objects\0c\802c82a59887f47f7e4002fa5865495def9c65" />
+    <Content Include="web-anasayfa\.git\objects\2b\a986f6f136f061ad7c345c47245788068e9218" />
+    <Content Include="web-anasayfa\.git\objects\32\e74390c774d40cb24cfa072785529ed7a11c11" />
+    <Content Include="web-anasayfa\.git\objects\37\350767b28e89ecac242c7d7b28708640336fce" />
+    <Content Include="web-anasayfa\.git\objects\50\175020c28ad682178dfc2f313da778fb659df7" />
+    <Content Include="web-anasayfa\.git\objects\51\a493d7346d361cc1e0045e8ac9c7bd904b1dee" />
+    <Content Include="web-anasayfa\.git\objects\55\51f6ab267bb7627da36f2ffef3d9af02726fcc" />
+    <Content Include="web-anasayfa\.git\objects\58\a3071bebf8f5876885eac4e0944afeb7a1b297" />
+    <Content Include="web-anasayfa\.git\objects\5c\018eed2716f0df8ce4951bf29371cd036432b6" />
+    <Content Include="web-anasayfa\.git\objects\6b\cb14981ba54c337b019622beabdc2990d52b1f" />
+    <Content Include="web-anasayfa\.git\objects\6d\4f46fae554bde6db5b14f7edb6ef2906ad90c1" />
+    <Content Include="web-anasayfa\.git\objects\6f\9509c88bed7080d496fc5e1d87a9315e30549d" />
+    <Content Include="web-anasayfa\.git\objects\75\9afa244691daded953ae9f054f587ef5fe2d1c" />
+    <Content Include="web-anasayfa\.git\objects\a0\5e0462e16c71f4bb257acc6d0445d4f8aba839" />
+    <Content Include="web-anasayfa\.git\objects\a2\ab5c9523e5ff8077006e81cba9cb8cc95d93d4" />
+    <Content Include="web-anasayfa\.git\objects\af\fe2b481728dd81424c04b1f1e62126b3a7e7eb" />
+    <Content Include="web-anasayfa\.git\objects\bb\8d82ba807b2ccdad99b1c45c970f155fd04530" />
+    <Content Include="web-anasayfa\.git\objects\c7\e7e7a48d42899ef266d47006b0b03e43a7e0d6" />
+    <Content Include="web-anasayfa\.git\objects\d4\18a798436440f566f9e8d89a3192a0bbd2836a" />
+    <Content Include="web-anasayfa\.git\objects\d5\44a58442b82e4b3e80492056619e218cac9e7a" />
+    <Content Include="web-anasayfa\.git\objects\d7\d4579ae9baaccf09ed86a89ab71aa104772eca" />
+    <Content Include="web-anasayfa\.git\objects\d8\0b971bb8ba5eebd48f3c7a269a0fafd4f41cf6" />
+    <Content Include="web-anasayfa\.git\objects\d9\2282839fcb93c7281633fb043f16f18665aedb" />
+    <Content Include="web-anasayfa\.git\objects\df\e0770424b2a19faf507a501ebfc23be8f54e7b" />
+    <Content Include="web-anasayfa\.git\objects\e5\edad2993b246c6e2f404146899d2df87fb2b16" />
+    <Content Include="web-anasayfa\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
+    <Content Include="web-anasayfa\.git\objects\ec\7afad5e48328381f40494768782880e0713927" />
+    <Content Include="web-anasayfa\.git\objects\f2\5ac479d79a6bc1d5dafb047448ac5328f2d4f9" />
+    <Content Include="web-anasayfa\.git\objects\f8\2911540da56c90c1755f3241db20f650a3ccb1" />
+    <Content Include="web-anasayfa\.git\refs\heads\main" />
+    <Content Include="web-anasayfa\.git\refs\remotes\origin\HEAD" />
+    <Content Include="web-anasayfa\.git\refs\remotes\origin\main" />
+    <Content Include="web-anasayfa\.vscode\launch.json" />
+    <Content Include="Views\Anasayfa\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Guncelle.cshtml" />
+    <Content Include="Views\Admin\YeniPost.cshtml" />
+    <Content Include="Views\AdminLogin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="web-anasayfa\.git\objects\info\" />
+    <Folder Include="web-anasayfa\.git\objects\pack\" />
+    <Folder Include="web-anasayfa\.git\refs\tags\" />
+    <Folder Include="web-anasayfa\fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -213,7 +304,10 @@
       <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
