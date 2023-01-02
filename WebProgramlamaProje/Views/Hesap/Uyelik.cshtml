@@ -1,0 +1,92 @@
+﻿@model WebProgramlamaProje.Models.Classes.Kullanici
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="h100">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <title>Uyelik</title>
+</head>
+<body class="h100" style="background: radial-gradient(circle at 10% 20%, rgb(253, 239, 132) 0%, rgb(247, 198, 169) 54.2%, rgb(21, 186, 196) 100.3%);background-repeat:no-repeat;background-attachment:fixed; ">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+    <div class="center" style="margin-left:auto !important;margin-right:auto !important;">
+        <div class="form-horizontal" style="margin:auto !important;">
+            <h4 style="padding:10px !important;" align="center">Üyelik Formu</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @if (ViewBag.Message != null)
+            {
+                <div class="form-group">
+                    <div class="col-md-5">@ViewBag.Message</div>
+                </div>
+            }
+            <div class="form-group" align="center">
+                @Html.LabelFor(model => model.FirstName,"İsim", htmlAttributes: new { @class = "control-label col-md-3", @style = "text-align:left;" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                @Html.LabelFor(model => model.LastName, "Soyisim",htmlAttributes: new { @class = "control-label col-md-3", @style = "text-align:left;" });
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                @Html.LabelFor(model => model.Email, "Email",htmlAttributes: new { @class = "control-label col-md-3", @style = "text-align:left;" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                @Html.LabelFor(model => model.KullaniciAdi,"Kullanıcı Adı", htmlAttributes: new { @class = "control-label col-md-3", @style = "text-align:left;" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.KullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.KullaniciAdi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                @Html.LabelFor(model => model.Password, "Şifre" ,htmlAttributes: new { @class = "control-label col-md-3", @style = "text-align:left;" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                @Html.LabelFor(model => model.ConfirmPassword, "Şifre onayla" ,htmlAttributes: new { @class = "control-label col-md-3", @style ="text-align:left;" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Üye Ol" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+        }
+    
+</body>
+</html>

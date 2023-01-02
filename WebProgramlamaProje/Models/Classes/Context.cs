@@ -7,5 +7,6 @@ namespace WebProgramlamaProje.Models.Classes
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Anasayfa>Anasayfalar{ get; set; }
         
+        public DbSet<Kullanici> Kullanicilar { get; set;}
     }
 }
