@@ -49,12 +49,30 @@
                     <img src="@item.postResim" />
                 </div>
                 <p class="post-icerik">@item.postIcerik</p>
-            </div>
-
+            </div>      
+                               
+                    <div style="background-color: rgba(0, 0, 0, 0.4) !important; margin-top:4px;">
+                        <table>
+                            @foreach (var a in Model.yorumlist)
+                            {
+                                if (a.PostID == item.id)
+                                {
+                                    <tr>
+                                        <td style="border-bottom:1px solid;">
+                                            @Model.kullanicilist[a.UserID - 1].KullaniciAdi : @a.Mesaj
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </table>
+                        
+                    </div>
+                
             <div class="user-comment">
-                @using (Html.BeginForm("PostComment", "ChatRoom", FormMethod.Post))
+                @using (Html.BeginForm("YorumAt", "Yorum",
+                    new { postid = item.id },FormMethod.Post))
                 {
-                    <input class="pull-right" type="text" name="CommentText" placeholder="Yeni yorum gir"
+                    <input required class="pull-right" type="text" name="yorumText" placeholder="Yeni yorum gir"
                            style="width:100% ;height:60px; font-size:20px; margin-top:5px; border-radius:7px;" />
                     <br/>
                     <input type="hidden" name="CID" value=""/>
