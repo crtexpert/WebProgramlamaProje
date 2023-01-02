@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebProgramlamaProjeDBModelStoreContainer" CdmEntityContainer="WebProgramlamaProjeDBEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="WebProgramlamaProjeDBModel.Admins">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anasayfas">
+      <EntityTypeMapping TypeName="WebProgramlamaProjeDBModel.Anasayfas">
+        <MappingFragment StoreEntitySet="Anasayfas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="postResim" ColumnName="postResim" />
+          <ScalarProperty Name="postBaslik" ColumnName="postBaslik" />
+          <ScalarProperty Name="postTarih" ColumnName="postTarih" />
+          <ScalarProperty Name="postIcerik" ColumnName="postIcerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicis">
+      <EntityTypeMapping TypeName="WebProgramlamaProjeDBModel.Kullanicis">
+        <MappingFragment StoreEntitySet="Kullanicis">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yorums">
+      <EntityTypeMapping TypeName="WebProgramlamaProjeDBModel.Yorums">
+        <MappingFragment StoreEntitySet="Yorums">
+          <ScalarProperty Name="YorumId" ColumnName="YorumId" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

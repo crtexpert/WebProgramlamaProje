@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebProgramlamaProje.Models.Classes;
 
 namespace WebProgramlamaProje.Controllers
 {
@@ -26,5 +27,6 @@ namespace WebProgramlamaProje.Controllers
 
             return View();
         }
+        
     }
 }

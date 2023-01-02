@@ -1,5 +1,5 @@
-﻿@using WebProgramlamaProje.Models.Classes
-@model List<Anasayfa>
+﻿@using WebProgramlamaProje.Models.Classes;
+@model  dynamic
 @{
     Layout = null;
 }
@@ -40,7 +40,7 @@
     </nav>
 
     <div id="content">
-        @foreach (var item in Model)
+        @foreach (var item in Model.anasayfalist)
         {
             <div class="post">
                 <h2 class="post-baslik">@item.postBaslik</h2>
@@ -50,6 +50,7 @@
                 </div>
                 <p class="post-icerik">@item.postIcerik</p>
             </div>
+
             <div class="user-comment">
                 @using (Html.BeginForm("PostComment", "ChatRoom", FormMethod.Post))
                 {

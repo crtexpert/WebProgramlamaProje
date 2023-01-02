@@ -8,5 +8,7 @@ namespace WebProgramlamaProje.Models.Classes
         public DbSet<Anasayfa>Anasayfalar{ get; set; }
         
         public DbSet<Kullanici> Kullanicilar { get; set;}
+
+        public DbSet<Yorum> Yorumlar { get; set; }
     }
 }

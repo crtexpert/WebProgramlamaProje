@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebProgramlamaProjeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciAdi" Type="nvarchar(max)" />
+    <Property Name="sifre" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Anasayfas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="postResim" Type="nvarchar(max)" />
+    <Property Name="postBaslik" Type="nvarchar(max)" />
+    <Property Name="postTarih" Type="nvarchar(max)" />
+    <Property Name="postIcerik" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Kullanicis">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ConfirmPassword" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Yorums">
+    <Key>
+      <PropertyRef Name="YorumId" />
+    </Key>
+    <Property Name="YorumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mesaj" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PostID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WebProgramlamaProjeDBModelStoreContainer">
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anasayfas" EntityType="Self.Anasayfas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicis" EntityType="Self.Kullanicis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yorums" EntityType="Self.Yorums" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

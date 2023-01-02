@@ -178,3 +178,13 @@ C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\obj\Debu
 C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\obj\Debug\WebProgramlamaProje.csproj.CopyComplete
 C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\obj\Debug\WebProgramlamaProje.dll
 C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\obj\Debug\WebProgramlamaProje.pdb
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\ADO.Net.Client.Annotations.dll
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\ADO.Net.Client.Core.dll
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\ADO.Net.Client.Annotations.xml
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\ADO.Net.Client.Core.xml
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\gorke\Documents\GitHub\WebProgramlamaProje\WebProgramlamaProje\bin\System.Threading.Tasks.Extensions.xml
